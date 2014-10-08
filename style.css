@@ -1,0 +1,92 @@
+body {
+	background-color: #322F2B;
+}
+
+p {
+	font-family: arial;
+	font-size: 18px;
+}
+
+form {
+	font-family: arial;
+}
+
+img {
+	height: 35px;
+	text-align: right;
+}
+
+button {
+	background-color: white;
+	font-family: arial;
+}
+
+#Step1 {
+	margin: 25px;
+	width: 500px;
+	padding: 25px;
+	border: 2px solid white;
+	float: left;
+	background-color: #CBBFAF 
+}
+
+
+#Step2 {
+	margin: 25px;
+	width: 1100px;
+	padding: 25px;
+	border: 2px solid white;
+	float: left;
+	font-family: arial;
+	background-color: #CBBFAF
+}
+
+#ChatBox {
+	margin: 25px;
+	width: 990px;
+	height: 450px;
+	border: 3px solid black;
+	float: center;
+	background-color: white;
+	overflow: auto;
+}
+
+#textInput {
+	margin: 25px;
+	width: 900px;
+	height: 40px;
+	border: 3px solid black;
+	float: left;
+	background-color: white;
+}
+
+#textInput input{
+	width: 895px;
+	height: 35px;
+	padding-bottom: 0px;
+	float: left;
+	font-family: arial;
+	font-size: 15px;
+}
+
+
+#Header {
+	height: 45px;
+	width: 100%;
+	padding: 12px;
+	background-color: #7E776D;
+	font-family: arial;
+	font-size: 40px;
+	color: #BEB3A4;
+}
+
+
+#UserCrd {
+	margin: 25px;
+	font-family: arial;
+}
+
+#YourInfo {
+	margin: 25px;
+	font-family: arial;	
+}

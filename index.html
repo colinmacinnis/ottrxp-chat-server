@@ -1,23 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Chat | Ottrxp</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-    </style>
-  </head>
-  <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<Title>Chat Interface App</Title>
+
+</head>
+<body>
+
+
+	<div id="Header">Chat | Ottrxp
+		<img src="http://ottrxp.com/content/images/2014/Sep/ottrxp-1.png"/>
+	</div>
+
+
+
+	<div id="Step1">
+		<div id="UserCrd">
+			<h1>Step 1: User Credentials</h1>
+
+			<p>First you're going to need to enter your name. Once filled out, your name will overwrite the [UserName] variable.</p>
+
+			<form>Your Name:
+				<input id="newUser" type="text">
+					<input type="button" $("button").on("click", "prompter()") value="Done">
+			</form>
+		</div>
+	</div>
+
+
+
+
+	<div id="Step2">
+		<h1>Step 2: Chatting</h1>
+
+		<p>Below is your ChatBox! This is where messages you create will be displayed.</p>
+
+		<div id="ChatBox">
+			<div id="MessageDisplay">
+			</div>
+		</div>
+
+
+		<div id="textInput">
+			<form action="">
+				<input type="text" id="yourMessage" placeholder="Enter your message here..."><br><br><br>
+				<input type="button" value="Send" onclick="sendMessage()">
+			</form>	
+		</div>
+
+
+	</div>
+
+	<script src="script.js"></script>
 
 	<script src="/socket.io/socket.io.js"></script>
 
@@ -31,29 +66,23 @@
 
 
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+ 
+
+	<script>
+ 		var socket = io();
+ 		$('form').submit(function(){
+ 		socket.emit('chat message', $('#yourMessage').val());
+ 		$('#yourMessage').val('');
+ 		return false;
+ 		});
+	</script>
 
 
-<script>
- var socket = io();
- $('form').submit(function(){
- socket.emit('chat message', $('#m').val());
- $('#m').val('');
- return false;
- });
-</script>
-
-
-<script>
-  var socket = io();
-  $('form').submit(function(){
-    socket.emit('chat message', $('#m').val());
-    $('#m').val('');
-    return false;
-  });
-  socket.on('chat message', function(msg){
-    $('#messages').append($('<li>').text(msg));
-  });
-</script>
+	<script>
+ 		socket.on('chat message', function(msg){
+    	$('#MessageDisplay').append($('<p>').text(msg));
+  		});
+	</script>
 
 
   </body>
