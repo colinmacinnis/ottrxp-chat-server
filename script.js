@@ -1,34 +1,32 @@
-// STEP 1 //
-console.log("script loaded");
-var name = "";
+///////////////////////////////// 
+// "YOUR NAME" BUTTON FUNCTION //
+/////////////////////////////////
+
+var name = ""
+	function prompter(){
+		name = document.getElementById("newUser").value;
+		console.log("Username: " + name);
+		var helloUser = "Hey " + name + ", welcome to ottrChat!";
+		alert(helloUser);
+	}
 
 
+////////////////////////////////////
+// "SEND MESSAGE" BUTTON FUNCTION //
+//	  & IT SHOWING UP IN CHAT BOX //
+////////////////////////////////////
+socket.on('chat message', function(msg){
+    $('#MessageDisplay').append($('<p>').text(name + ": " + msg));
+  	});
 
-
-
-
-// FUNCTIONS //
-function prompter(){
-	name = document.getElementById("newUser").value;
-	console.log(name);
-	msg = "Hey " + name + ", welcome to my sick chat!";
-	alert(msg);
-}	
-
-function sendMessage(){
-	console.log("Name is " + name);
-	var message = document.getElementById("yourMessage").value;
-	console.log("Message is " + message);
-	document.getElementById("MessageDisplay").appendChild(document.createTextNode(name + ": " + message));
-	document.getElementById("MessageDisplay").appendChild(document.createElement("br"));
-}
-
-// Server Thing //
+///////////////////////////////////
+///////// SENDING STUFF? //////////
+///////////////////////////////////
 var socket = io();
-
- 		$('form').submit(function(){
- 		socket.emit('chat message', $('#yourMessage').val());
+	$('form').submit(function(){
+ 		socket.emit('chat message', name + ": " + $('#yourMessage').val());
  		$('#yourMessage').val('');
  		return false;
- 		});
+ 	});
+
 

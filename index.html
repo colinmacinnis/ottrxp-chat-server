@@ -81,35 +81,6 @@
 	</script>
 
 
-<!--/////////////////////////// 
-	"YOUR NAME" BUTTON FUNCTION
-	///////////////////////////-->
-	<script>
-	var name = ""
-		function prompter(){
-			name = document.getElementById("newUser").value;
-			console.log("Username: " + name);
-			var helloUser = "Hey " + name + ", welcome to ottrChat!";
-			alert(helloUser);
-		}
-	</script>
-
-
-<!--//////////////////////////////
-	"SEND MESSAGE" BUTTON FUNCTION
-	  & IT SHOWING UP IN CHAT BOX
-	//////////////////////////////-->
-	<script>
- 		socket.on('chat message', function(msg){
-    	$('#MessageDisplay').append($('<p>').text(name + ": " + msg));
-  		});
-	</script>
-
-
-<!--//////////////////////////////
-	//// END SCRIPT SOURCING /////
-	//////////////////////////////-->
-
  </body>
 </html>
 <!--//////////////////////////////
