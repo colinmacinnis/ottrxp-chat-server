@@ -1,3 +1,7 @@
+<!--///////////////////////
+	/////// Website ///////
+	///////////////////////-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +13,7 @@
 <body>
 
 
-	<div id="Header">Chat | Ottrxp
+	<div id="Header"><em>ottr</em><b>Chat</b> | Part of the Otter Experience
 		<img src="http://ottrxp.com/content/images/2014/Sep/ottrxp-1.png"/>
 	</div>
 
@@ -21,9 +25,9 @@
 
 			<p>First you're going to need to enter your name. Once filled out, your name will overwrite the [UserName] variable.</p>
 
-			<form>Your Name:
-				<input id="newUser" type="text">
-					<input type="button" $("button").on("click", "prompter()") value="Done">
+			<form action="">Your Name:
+				<input id="newUser" type="text"/>
+				<input type="button" value="Done" onclick="prompter()"/>
 			</form>
 		</div>
 	</div>
@@ -44,32 +48,31 @@
 
 		<div id="textInput">
 			<form action="">
-				<input type="text" id="yourMessage" placeholder="Enter your message here..."><br><br><br>
-				<input type="button" value="Send" onclick="sendMessage()">
-			</form>	
+      			<input id="yourMessage" autocomplete="off" />
+      			<button>Send</button>
+    		</form>	
 		</div>
 
 
 	</div>
 
-	<script src="script.js"></script>
+
+<!--/////////////////////////////////
+	//// End of Website Structure ///
+	/////////////////////////////////-->
+
+<!--/////////////////////////////////
+	///// Begin Script Sourcing /////
+	/////////////////////////////////-->
 
 	<script src="/socket.io/socket.io.js"></script>
-
-
-	<script>
-  		var socket = io();
-	</script>
-
-
-	<script src="/socket.io/socket.io.js"></script>
-
 
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
  
 
 	<script>
  		var socket = io();
+
  		$('form').submit(function(){
  		socket.emit('chat message', $('#yourMessage').val());
  		$('#yourMessage').val('');
@@ -78,12 +81,38 @@
 	</script>
 
 
+<!--/////////////////////////// 
+	"YOUR NAME" BUTTON FUNCTION
+	///////////////////////////-->
+	<script>
+	var name = ""
+		function prompter(){
+			name = document.getElementById("newUser").value;
+			console.log("Username: " + name);
+			var helloUser = "Hey " + name + ", welcome to ottrChat!";
+			alert(helloUser);
+		}
+	</script>
+
+
+<!--//////////////////////////////
+	"SEND MESSAGE" BUTTON FUNCTION
+	  & IT SHOWING UP IN CHAT BOX
+	//////////////////////////////-->
 	<script>
  		socket.on('chat message', function(msg){
-    	$('#MessageDisplay').append($('<p>').text(msg));
+    	$('#MessageDisplay').append($('<p>').text(name + ": " + msg));
   		});
 	</script>
 
 
-  </body>
+<!--//////////////////////////////
+	//// END SCRIPT SOURCING /////
+	//////////////////////////////-->
+
+ </body>
 </html>
+<!--//////////////////////////////
+	////// END OF WEBSITE ////////
+	//////////////////////////////-->
+

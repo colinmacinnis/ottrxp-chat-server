@@ -1,3 +1,7 @@
+/*	//////////////////////////
+	//// HTML TAG STYLES /////
+	////////////////////////// */
+
 body {
 	background-color: #322F2B;
 }
@@ -17,9 +21,20 @@ img {
 }
 
 button {
-	background-color: white;
+	background-color: #4B3D2A;
+	font-size: 14px;
+	color: white;
 	font-family: arial;
+	width: 100px;
+	border: 2px solid;
+	border-radius: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
+
+/*	////////////////////////
+	////// #ID STYLES//////
+	//////////////////////// */
 
 #Step1 {
 	margin: 25px;
@@ -46,16 +61,17 @@ button {
 	width: 990px;
 	height: 450px;
 	border: 3px solid black;
-	float: center;
+	float: bottom;
 	background-color: white;
 	overflow: auto;
+	word-wrap: break-word;
 }
 
 #textInput {
 	margin: 25px;
 	width: 900px;
 	height: 40px;
-	border: 3px solid black;
+	border: 2px solid black;
 	float: left;
 	background-color: white;
 }
@@ -90,3 +106,7 @@ button {
 	margin: 25px;
 	font-family: arial;	
 }
+
+/*	//////////////////////
+	/// .CLASS STYLES ////
+	////////////////////// */

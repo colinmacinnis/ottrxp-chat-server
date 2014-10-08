@@ -4,12 +4,6 @@ var name = "";
 
 
 
-// EVENT FOR USING ENTER TO SEND MESSAGE //
-document.getElementById("yourMessage").addEventListener('keydown',function(event){
-	if (event.keyCode === 13){
-		sendMessage();
-	}
-});
 
 
 
@@ -29,4 +23,12 @@ function sendMessage(){
 	document.getElementById("MessageDisplay").appendChild(document.createElement("br"));
 }
 
+// Server Thing //
+var socket = io();
+
+ 		$('form').submit(function(){
+ 		socket.emit('chat message', $('#yourMessage').val());
+ 		$('#yourMessage').val('');
+ 		return false;
+ 		});
 

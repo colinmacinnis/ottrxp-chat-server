@@ -1,3 +1,9 @@
+////////////////////////
+///// WHAT THIS IS /////
+////////////////////////
+
+//Basically this is a manifest file that describes our project.//
+
 {
   "name": "socket-chat-server",
   "version": "0.0.1",
