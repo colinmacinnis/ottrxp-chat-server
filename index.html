@@ -1,24 +1,32 @@
-<!--///////////////////////
-	/////// Website ///////
-	///////////////////////-->
+<!--// Website //-->
 
 <!DOCTYPE html>
 <html>
+
+
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
-	<Title>Chat Interface App</Title>
+	<Title>OttrChat</Title>
+
+	<!--META DATA FOR SEO-->
+	<meta charset="UTF-8">
+	<meta name="description" content="OttrChat is a branch of Ottrxp. OttrChat is my first working web application.">
+	<meta name="keywords" content="ottrchat, ottrxp, ottrcast">
+	<meta name="author" content="Colin MacInnis">
 
 </head>
+
+
 <body>
 
-
+	<!--Top Banner-->
 	<div id="Header"><em>ottr</em><b>Chat</b> | Part of the Otter Experience
 		<img src="http://ottrxp.com/content/images/2014/Sep/ottrxp-1.png"/>
 	</div>
 
 
-
+	<!--Step 1 Container-->
 	<div id="Step1">
 		<div id="UserCrd">
 			<h1>Step 1: User Credentials</h1>
@@ -33,8 +41,7 @@
 	</div>
 
 
-
-
+	<!--Step 2 Container-->
 	<div id="Step2">
 		<h1>Step 2: Chatting</h1>
 
@@ -68,22 +75,11 @@
 	<script src="/socket.io/socket.io.js"></script>
 
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
- 
-
-	<script>
- 		var socket = io();
-
- 		$('form').submit(function(){
- 		socket.emit('chat message', $('#yourMessage').val());
- 		$('#yourMessage').val('');
- 		return false;
- 		});
-	</script>
 
 
- </body>
-</html>
+
 <!--//////////////////////////////
 	////// END OF WEBSITE ////////
 	//////////////////////////////-->
-
+ </body>
+</html>
