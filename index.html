@@ -1,32 +1,19 @@
-<!--// Website //-->
-
 <!DOCTYPE html>
 <html>
-
-
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	
 	<Title>OttrChat</Title>
-
-	<!--META DATA FOR SEO-->
 	<meta charset="UTF-8">
 	<meta name="description" content="OttrChat is a branch of Ottrxp. OttrChat is my first working web application.">
 	<meta name="keywords" content="ottrchat, ottrxp, ottrcast">
 	<meta name="author" content="Colin MacInnis">
-
 </head>
-
-
 <body>
-
-	<!--Top Banner-->
-	<div id="Header"><em>ottr</em><b>Chat</b> | Part of the Otter Experience
+	<div id="Header">
+		<span>ottrChat</span>
 		<img src="http://ottrxp.com/content/images/2014/Sep/ottrxp-1.png"/>
 	</div>
 
-
-	<!--Step 1 Container-->
 	<div id="Step1">
 		<div id="UserCrd">
 			<h1>Step 1: User Credentials</h1>
@@ -35,13 +22,11 @@
 
 			<form action="">Your Name:
 				<input id="newUser" type="text"/>
-				<input type="button" value="Done" onclick="prompter()"/>
+				<input id="enter" type="button" value="Done" onclick="prompter()"/>
 			</form>
 		</div>
 	</div>
 
-
-	<!--Step 2 Container-->
 	<div id="Step2">
 		<h1>Step 2: Chatting</h1>
 
@@ -54,13 +39,11 @@
 
 
 		<div id="textInput">
-			<form action="">
+			<form>
       			<input id="yourMessage" autocomplete="off" placeholder="Enter your message here..."/>
-      			<button>Submit</button>
+      			<input type='submit' value='send' id='send'>
     		</form>	
 		</div>
-
-
 	</div>
 
 
@@ -76,13 +59,49 @@
 
 	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
-	<script src="script.js" type="text/JavaScript"></script>
+	<script>
+		var socket = io();
+
+	// "YOUR NAME" BUTTON FUNCTION //
+		var name = document.getElementById("newUser").value;
+
+		function prompter(){
+			name = document.getElementById("newUser").value;
+			if(name.length === 0){
+				alert("Please enter a name first..");
+			} else {
+				alert("Hey " + name + ", welcome to OttrChat!!");
+			}
+		};
 
 
+// "SEND MESSAGE" BUTTON FUNCTION //
+//	 & IT SHOWING UP IN CHAT BOX  //
 
+		$('form').submit(function(){
+ 			socket.emit('chat message', name + ": " + $('#yourMessage').val());
+			var msg = $('#yourMessage').val();
+ 			$('#MessageDisplay').append($('<p>').text(msg));
+ 			$('#yourMessage').val('');
+ 			return false;
+ 		});
 
-<!--//////////////////////////////
-	////// END OF WEBSITE ////////
-	//////////////////////////////-->
- </body>
+// The above piece reads as follows:
+//		1. Grab the form tag from the HTML file,
+//		2. Write what the submit button does (activates function),
+//		3. Function tells the button to emit an event called 'Chat Message' and when called, write "name: yourMessage"
+//		4. yourMessage value (the actual message itself) is extracted using the jQuery method "$(yourMessage).val('');"
+
+		socket.on('chat message', function(msg){
+    		$('#MessageDisplay').append($('<p>').text(msg));
+		});
+
+		socket.on('history', function(replies){
+    		for (var i in replies) {
+      			var msg = replies[i];
+     			$('#MessageDisplay').append($('<div>').text(msg));
+    		};
+ 		});
+	</script>
+</body>
 </html>

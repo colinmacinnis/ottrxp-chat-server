@@ -3,7 +3,8 @@
 	////////////////////////// */
 
 body {
-	background-color: #322F2B;
+	background-image: url("/imageedit_2_3707760900.gif");
+	background-size: cover;
 }
 
 p {
@@ -16,8 +17,7 @@ form {
 }
 
 img {
-	height: 35px;
-	text-align: right;
+	height: 80px;
 }
 
 button {
@@ -32,6 +32,13 @@ button {
 	padding-bottom: 10px;
 }
 
+span {
+	padding-left: 10px;
+	color: #f8f8ff;
+	font-size: 80px;
+	text-shadow: 0 3px 0 #b2a98f,0 14px 10px rgba(0,0,0,0.15), 0 24px 2px rgba(0,0,0,0.1), 0 34px 30px rgba(0,0,0,0.1);
+}
+
 /*	////////////////////////
 	////// #ID STYLES//////
 	//////////////////////// */
@@ -39,10 +46,18 @@ button {
 #Step1 {
 	margin: 25px;
 	width: 500px;
-	padding: 25px;
-	border: 2px solid white;
+	border-radius: 25px;
+	box-shadow: 10px 10px 5px #585858;
 	float: left;
-	background-color: #CBBFAF 
+	background: rgb(167,199,220); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(167,199,220,1) 0%, rgba(133,178,211,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(167,199,220,1)), color-stop(100%,rgba(133,178,211,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
+
 }
 
 
@@ -50,10 +65,19 @@ button {
 	margin: 25px;
 	width: 1100px;
 	padding: 25px;
-	border: 2px solid white;
+	border-radius: 25px;
+	box-shadow: 10px 10px 5px #585858;
 	float: left;
 	font-family: arial;
-	background-color: #CBBFAF
+	background: rgb(167,199,220); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(167,199,220,1) 0%, rgba(133,178,211,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(167,199,220,1)), color-stop(100%,rgba(133,178,211,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
+
 }
 
 #ChatBox {
@@ -87,15 +111,23 @@ button {
 
 
 #Header {
-	height: 45px;
+
+	height: 100px;
 	width: 100%;
 	padding: 12px;
-	background-color: #7E776D;
+	border-radius: 10px 10px 5px;
+	background: rgb(181,189,200); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(181,189,200,1)), color-stop(36%,rgba(130,140,149,1)), color-stop(100%,rgba(40,52,59,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
 	font-family: arial;
 	font-size: 40px;
-	color: #BEB3A4;
+	color: #eeeeee;
 }
-
 
 #UserCrd {
 	margin: 25px;
@@ -105,6 +137,18 @@ button {
 #YourInfo {
 	margin: 25px;
 	font-family: arial;	
+}
+
+#submit {
+	background-color: #4B3D2A;
+	font-size: 14px;
+	color: white;
+	font-family: arial;
+	width: 20px;
+	border: 2px solid;
+	border-radius: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 /*	//////////////////////
